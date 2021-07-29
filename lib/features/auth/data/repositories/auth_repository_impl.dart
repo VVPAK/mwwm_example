@@ -21,12 +21,10 @@ class AuthRepositoryImpl implements AuthRepository {
     required String login,
     required String password,
   }) async {
-    var authData = remoteDataSource.authenticate(
+    final authData = remoteDataSource.authenticate(
       login: login,
       password: password,
     );
-
-    _cachedAuthData = await authData;
 
     return authData;
   }
