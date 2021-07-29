@@ -1,7 +1,12 @@
-class AuthData {
+import 'package:equatable/equatable.dart';
+
+class AuthData extends Equatable {
   final String accessToken;
 
-  AuthData({
+  @override
+  List<Object?> get props => [accessToken];
+
+  const AuthData({
     required this.accessToken,
   });
 }
