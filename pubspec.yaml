@@ -28,9 +28,13 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  equatable: ^2.0.3
   flutter:
     sdk: flutter
   mwwm: ^2.0.0
+  provider: ^5.0.0
+  surf_injector: ^1.0.0
+  surf_util: ^1.0.1
 
 dev_dependencies:
   flutter_test:
