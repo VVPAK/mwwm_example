@@ -7,10 +7,6 @@ class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
   final AuthLocalDataSource localDataSource;
 
-  late AuthData _cachedAuthData;
-
-  // String get accessToken => _cachedAuthData.accessToken;
-
   AuthRepositoryImpl({
     required this.remoteDataSource,
     required this.localDataSource,

@@ -40,30 +40,31 @@ class _AuthScreenState extends WidgetState<AuthScreen, AuthScreenWidgetModel> {
         title: const Text('LoginPage'),
       ),
       body: StreamBuilder<bool>(
-          stream: wm.isLoading,
-          builder: (context, snapshot) {
-            final isLoading = snapshot.data ?? false;
+        stream: wm.isLoading,
+        builder: (context, snapshot) {
+          final isLoading = snapshot.data ?? false;
 
-            if (isLoading) {
-              return const CircularProgressIndicator();
-            }
-            return Column(
-              children: [
-                const Text('Login'),
-                TextField(
-                  controller: wm.loginController,
-                ),
-                const Text('Password'),
-                TextField(
-                  controller: wm.passwordController,
-                ),
-                TextButton(
-                  onPressed: wm.authenticate,
-                  child: const Text('Login'),
-                ),
-              ],
-            );
-          }),
+          if (isLoading) {
+            return const CircularProgressIndicator();
+          }
+          return Column(
+            children: [
+              const Text('Login'),
+              TextField(
+                controller: wm.loginController,
+              ),
+              const Text('Password'),
+              TextField(
+                controller: wm.passwordController,
+              ),
+              TextButton(
+                onPressed: wm.authenticate,
+                child: const Text('Login'),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }

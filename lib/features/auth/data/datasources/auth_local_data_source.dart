@@ -11,7 +11,7 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   @override
   Future<AuthDataModel> loadAuthData() async {
     //Логика загрузки данных из памяти устройства
-    return Future.value(AuthDataModel(accessToken: 'test_access_token'));
+    return Future.value(const AuthDataModel(accessToken: 'test_access_token'));
   }
 
   @override

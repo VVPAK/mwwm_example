@@ -18,7 +18,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     //Логика отправки данных аутентификации на сервер и получение токена
     return Future.delayed(
       const Duration(seconds: 2),
-      () => AuthDataModel(accessToken: 'test_access_token'),
+      () => const AuthDataModel(accessToken: 'test_access_token'),
     );
   }
 }
