@@ -8,7 +8,7 @@ class AuthScreenRoute extends MaterialPageRoute<void> {
 
   AuthScreenRoute()
       : super(
-          builder: (context) => AuthScreen(),
+          builder: (context) => const AuthScreen(),
         ) {
     _instance = this;
   }

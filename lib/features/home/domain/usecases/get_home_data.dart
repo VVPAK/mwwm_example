@@ -14,8 +14,6 @@ class GetHomeData implements UseCase<HomeData, NoParams> {
 
   @override
   Future<HomeData> call(NoParams params) {
-    print('call get home data');
-    print(authRepository.accessToken);
     return homeRepository.getHomePage(authRepository.accessToken);
   }
 }

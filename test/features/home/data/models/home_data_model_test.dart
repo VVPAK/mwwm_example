@@ -8,7 +8,7 @@ void main() {
   ]);
 
   test('Should parse json to homeDataModel', () async {
-    final result = HomeDataModel.fromJson(const [
+    final result = HomeDataModel.fromJson(const <dynamic>[
       <String, dynamic>{
         'title': 'title',
         'description': 'description',
