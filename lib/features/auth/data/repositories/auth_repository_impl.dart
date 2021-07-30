@@ -7,6 +7,11 @@ class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
   final AuthLocalDataSource localDataSource;
 
+  @override
+  String get accessToken => _authData != null ? _authData!.accessToken : '';
+
+  AuthData? _authData;
+
   AuthRepositoryImpl({
     required this.remoteDataSource,
     required this.localDataSource,
@@ -17,14 +22,12 @@ class AuthRepositoryImpl implements AuthRepository {
     required String login,
     required String password,
   }) async {
-    print(login);
-    print(password);
-    final authData = remoteDataSource.authenticate(
+    final authData = await remoteDataSource.authenticate(
       login: login,
       password: password,
     );
 
-    throw Exception('asdasd');
+    _authData = authData;
 
     return authData;
   }

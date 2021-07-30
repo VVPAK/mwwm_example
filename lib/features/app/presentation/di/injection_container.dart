@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mwwm_example/core/controllers/material_message_controller.dart';
 import 'package:mwwm_example/core/error_handlers/standart_error_handler.dart';
 import 'package:mwwm_example/features/auth/presentation/di/auth_provider.dart';
+import 'package:mwwm_example/features/home/presentation/di/home_provider.dart';
 import 'package:provider/provider.dart';
 
 class InjectionContainer extends StatelessWidget {
@@ -25,6 +26,7 @@ class InjectionContainer extends StatelessWidget {
           ),
         ),
         const AuthProvider(),
+        const HomeProvider(),
       ],
       child: child,
     );
