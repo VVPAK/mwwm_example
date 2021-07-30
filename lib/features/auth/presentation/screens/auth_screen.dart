@@ -1,24 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mwwm/mwwm.dart';
-import 'package:mwwm_example/core/error_handlers/standart_error_handler.dart';
-import 'package:mwwm_example/features/auth/domain/usecases/authenticate_user.dart';
 import 'package:mwwm_example/features/auth/presentation/wms/auth_screen_wm.dart';
-import 'package:provider/provider.dart';
 
 class AuthScreen extends CoreMwwmWidget<AuthScreenWidgetModel> {
-  AuthScreen({Key? key})
+  const AuthScreen({Key? key})
       : super(
           key: key,
-          widgetModelBuilder: (context) {
-            return AuthScreenWidgetModel(
-              WidgetModelDependencies(
-                errorHandler:
-                    Provider.of<StandardErrorHandler>(context, listen: false),
-              ),
-              authenticateUser:
-                  Provider.of<AuthenticateUser>(context, listen: false),
-            );
-          },
+          widgetModelBuilder: authScreenWidgetModelBuilder,
         );
   @override
   WidgetState<CoreMwwmWidget<AuthScreenWidgetModel>, AuthScreenWidgetModel>

@@ -17,10 +17,14 @@ class AuthRepositoryImpl implements AuthRepository {
     required String login,
     required String password,
   }) async {
+    print(login);
+    print(password);
     final authData = remoteDataSource.authenticate(
       login: login,
       password: password,
     );
+
+    throw Exception('asdasd');
 
     return authData;
   }
